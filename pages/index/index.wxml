@@ -5,3 +5,12 @@
     <view class="topTitleLine"></view>
   </view>
 </view>
+
+<view class='newCenter'>
+  <view class="newTitle">标题ssssssssssssssssss</view>
+  <view class="newInfo">
+    <view class="newScoure">来源</view>
+    <view class="newTime">时间</view>
+  </view>
+  <view class="newImage">图片</view>
+</view>

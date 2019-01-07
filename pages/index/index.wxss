@@ -1,6 +1,6 @@
 /**index.wxss**/
 .top-list{
-  padding-top: 16rpx;
+  padding-top: 12rpx;
   padding-bottom: 16rpx;
   height: 60rpx;
   display:flex;
@@ -29,3 +29,50 @@
   margin-left: 30rpx;
   background-color: rgb(233, 227, 227);
 }
+
+.newCenter{
+  margin: 20rpx;
+  position: relative;
+  background-color:red;
+  height: 350rpx;
+}
+
+.newImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 放在所有兄弟之后 */
+}
+
+.newTitle{
+  position: absolute;
+  bottom:70rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: 670rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  background-color: rgb(216, 238, 15);
+  word-break:break-all
+}
+.newInfo{
+  display:flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 16rpx
+}
+
+.newScoure{
+ margin-left: 20rpx;
+ font-size: 25rpx;
+}
+
+.newTime{
+ margin-left: 20rpx;
+ font-size: 25rpx;
+}
+
+

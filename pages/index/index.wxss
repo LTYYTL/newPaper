@@ -1,1 +1,31 @@
 /**index.wxss**/
+.top-list{
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  height: 60rpx;
+  display:flex;
+  background-color: #0099FF
+}
+
+/* .topTitle-fast{
+ // background-color:red
+} */
+
+.topTitle{
+  width: 95rpx;
+  font-size:30rpx;
+  line-height:42rpx;
+  color: white;
+  font-weight: 500; 
+  margin-left: 12rpx;
+  margin-top: 10rpx;
+  padding-bottom: 5rpx
+
+}
+
+.topTitleLine{
+  width: 30rpx;
+  height: 5rpx;
+  margin-left: 30rpx;
+  background-color: rgb(233, 227, 227);
+}

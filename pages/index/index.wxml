@@ -1,3 +1,7 @@
 <!--index.wxml-->
-<view class="title">Hello World!!!</view>
-<view class="title">Hello World!!!</view>
+<view class="top-list">
+  <view class="topTitle-fast" wx:for="{{topTitleList}}">
+    <view class="topTitle">{{item}}</view>
+    <view class="topTitleLine"></view>
+  </view>
+</view>

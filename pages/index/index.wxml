@@ -9,19 +9,20 @@
   </view>
   <!-- 中间模块 -->
   <view class='newCenter'>
-    <view class="centerTitle">标题ssssssssssssssssssssssssss</view>
+    <view class='centerId'>{{firstId}}</view>
+    <view class="centerTitle">{{firstTitle}}</view>
     <view class="centerInfo">
-      <view class="centerScoure">来源</view>
-      <view class="centerTime">时间</view>
+      <view class="centerSource">{{firstSource}}</view>
+      <view class="centerTime">{{firstDate}}</view>
     </view>
-    <view class="centerImage">图片</view>
+    <image class="centerImage" src='{{firstImage}}'></image>
   </view>
   <!-- 底部模块 -->
   <view class='bottom-list' wx:for="{{bottomList}}">
     <view class="newBottom">
       <view class="bottomTitle">标题ssssssssssssssssssssssssssssssssss</view>
       <view class='bottomInfo'>
-        <view class="bottomScoure">来源</view>
+        <view class="bottomSource">来源</view>
         <view class='bottomTime'>时间</view>
       </view>
     </view>

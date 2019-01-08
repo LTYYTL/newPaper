@@ -1,4 +1,7 @@
 /**index.wxss**/
+.all{
+  background-color: rgb(228, 226, 226)
+}
 .top-list{
   padding-top: 12rpx;
   padding-bottom: 16rpx;
@@ -37,7 +40,7 @@
   height: 350rpx;
 }
 
-.newImage{
+.centerImage{
   position: absolute;
   top: 0;
   left: 0;
@@ -46,7 +49,8 @@
   z-index: -1; /* 放在所有兄弟之后 */
 }
 
-.newTitle{
+.centerTitle{
+  color: white;
   position: absolute;
   bottom:70rpx;
   margin-left: 20rpx;
@@ -57,7 +61,8 @@
   background-color: rgb(216, 238, 15);
   word-break:break-all
 }
-.newInfo{
+
+.centerInfo{
   display:flex;
   position: absolute;
   left: 0;
@@ -65,14 +70,64 @@
   padding-bottom: 16rpx
 }
 
-.newScoure{
+.centerScoure{
  margin-left: 20rpx;
  font-size: 25rpx;
+ opacity: 0.65;
 }
 
-.newTime{
+.centerTime{
  margin-left: 20rpx;
  font-size: 25rpx;
+ opacity: 0.65;
 }
 
+.bottom-list{
+  display:flex; 
+  height: 200rpx;
+  background-color: green;
+  margin-bottom: 2rpx;
+}
+
+.newBottom{
+  margin: 20rpx;
+  background-color: blue;
+}
+
+.bottomImage{
+  margin: 20rpx;
+  width: 220rpx;
+  height: 160rpx;
+  background-color: purple
+}
+
+.bottomTitle{
+  /* position: absolute;
+  bottom:20rpx;  */
+  width: 440rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  background-color: rgb(216, 238, 15);
+  word-break:break-all
+}
+
+.bottomInfo{
+  padding-top: 10rpx;
+  display:flex;
+  /* position: absolute;
+  left: 0;
+  bottom: 0; */
+}
+
+.bottomScoure{
+ /* margin-left: 20rpx; */
+ font-size: 25rpx;
+ opacity: 0.65;
+}
+
+.bottomTime{
+ margin-left: 20rpx;
+ font-size: 25rpx;
+ opacity: 0.65;
+}
 

@@ -88,29 +88,31 @@
 .bottom-list{
   display:flex; 
   height: 200rpx;
-  background-color: green;
+  background-color: white;
   margin-bottom: 2rpx;
+}
+
+.bottomId{
+  display: none
 }
 
 .newBottom{
   margin: 20rpx;
-  background-color: blue;
+  padding-top: 20rpx;
 }
 
 .bottomImage{
   margin: 20rpx;
   width: 220rpx;
   height: 160rpx;
-  background-color: purple
 }
 
 .bottomTitle{
   /* position: absolute;
   bottom:20rpx;  */
   width: 440rpx;
-  font-size: 40rpx;
-  line-height: 56rpx;
-  background-color: rgb(216, 238, 15);
+  font-size: 30rpx;
+  line-height: 42rpx;
   word-break:break-all
 }
 

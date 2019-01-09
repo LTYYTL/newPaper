@@ -19,13 +19,14 @@
   </view>
   <!-- 底部模块 -->
   <view class='bottom-list' wx:for="{{bottomList}}">
+    <view class='bottomId'>{{item.id}}</view>
     <view class="newBottom">
-      <view class="bottomTitle">标题ssssssssssssssssssssssssssssssssss</view>
+      <view class="bottomTitle">{{item.title}}</view>
       <view class='bottomInfo'>
-        <view class="bottomSource">来源</view>
-        <view class='bottomTime'>时间</view>
+        <view class="bottomSource">{{item.source}}</view>
+        <view class='bottomTime'>{{item.date}}</view>
       </view>
     </view>
-    <view class="bottomImage">图片</view>
+    <image class="bottomImage" src='{{item.image}}'></image>
   </view>
 </view>

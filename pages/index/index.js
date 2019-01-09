@@ -13,7 +13,7 @@ const topTitleMap = {
 Page({
   data: {
     topTitleList: ['国内','国际','财经','娱乐','军事','体育','其他'],
-    bottomList: [1,2,3,4,5,6,7],
+    bottomList: [],
     firstId : '' ,
     firstTitle:'' ,
     firstDate: '',
@@ -34,20 +34,16 @@ Page({
         },
         success: res=>{
           let result = res.data.result
-          // let id = result.id;
-          // let title = result.title;
-          // let date = result.date;
-          // let source = result.source;
-          // let firstImage = result.firstImage;
-          //console.log(result)
           this.getFirstNew(result)
+          this.getNewList(result)
         }
       })
   },
+
+  //获取中间部分新闻
   getFirstNew(result){
       var util = require('../../utils/util.js')
       let firstNew = result[0]
-      console.log(firstNew)
       let firstId = firstNew.id;
       let firstTitle = firstNew.title;
       let firstDate = firstNew.date;
@@ -56,8 +52,6 @@ Page({
       if(firstSource ===''){
         firstSource = '未知网络'
       }
-      console.log(firstDate)
-      console.log(firstSource)
       this.setData({
         firstId: firstId,
         firstTitle: firstTitle,
@@ -65,5 +59,28 @@ Page({
         firstImage: firstImage,
         firstSource: firstSource,
        })
+  },
+  //获取新闻列表
+  getNewList(result){
+      var util = require('../../utils/util.js')
+      let bottomList = []
+      for(let i = 1;i<result.length;i++){
+        let source = result[i].source;
+        if (source === '') {
+          source = '未知网络'
+        }
+        bottomList.push({
+          id : result[i].id,
+          title: result[i].title,
+          date: util.formatTime(new Date(result[i].date)),
+          image: result[i].firstImage,
+          source: source,
+        })
+      }
+      this.setData({
+        bottomList: bottomList
+      })
   }
+
+
 })

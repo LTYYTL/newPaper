@@ -26,7 +26,7 @@ Page({
   onLoad(){
     this.setType('gn')
   },
-
+  //获取标题
   onTapCategory(e) {
     const { cat } = e.currentTarget.dataset;
     this.setData({
@@ -34,7 +34,7 @@ Page({
     })
     this.setType(cat);
   },
-
+  //根据标题获取内容
   setType(topTitle){
       //let type = topTitleMap[topTitle];
       wx.request({
@@ -90,7 +90,15 @@ Page({
       this.setData({
         bottomList: bottomList
       })
-  }
+  },
 
+  //跳转第二页面
+  onSelect(e) {
+    const { cat } = e.currentTarget.dataset;
+    console.log(cat['id'])
+    wx.navigateTo({
+      url: '/pages/info/info?id='+cat['id'],
+    })
+  },
 
 })

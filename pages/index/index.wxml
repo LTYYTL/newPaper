@@ -2,7 +2,6 @@
 <view class='all'>
   <!-- 顶部模块 -->
   <view class="top-list">
-    <!-- <view class="topTitle-fast" wx:for="{{topTitleList}}"> -->
     <view class="topTitle-fast {{type === item ? 'current-cat-item' : ''}}" wx:for="{{topTitleList}}" wx:key="{{item}}" bindtap="onTapCategory" data-cat="{{item}}">
       <view class="topTitle">{{topTitleMap[item]}}</view>
       <view class="topTitleLine"></view>
@@ -19,7 +18,8 @@
     <image class="centerImage" src='{{firstImage}}'></image>
   </view>
   <!-- 底部模块 -->
-  <view class='bottom-list' wx:for="{{bottomList}}">
+  <!-- <view class='bottom-list' wx:for="{{bottomList}}"> -->
+  <view class="bottom-list" wx:for="{{bottomList}}" wx:key="{{item}}" bindtap="onSelect" data-cat="{{item}}">
     <view class='bottomId'>{{item.id}}</view>
     <view class="newBottom">
       <view class="bottomTitle">{{item.title}}</view>

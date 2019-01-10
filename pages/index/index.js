@@ -1,18 +1,20 @@
 //index.js
 const topTitleMap = {
-  '国内': 'gn',
-  '国际': 'gj',
-  '财经': 'cj',
-  '娱乐': 'yl',
-  '军事': 'js',
-  '体育': 'ty',
-  '其他':'other'
+  'gn': "国内",
+  'gj': "国际",
+  'cj': "财经",
+  'yl': "娱乐",
+  'js': "军事",
+  'ty': "体育",
+  'other': "其他"
 }
 
 
 Page({
   data: {
-    topTitleList: ['国内','国际','财经','娱乐','军事','体育','其他'],
+    topTitleList: ["gn", "gj", "cj", "yl", "js", "ty", "other"],
+    topTitleMap,
+    topTitle:'',
     bottomList: [],
     firstId : '' ,
     firstTitle:'' ,
@@ -22,15 +24,23 @@ Page({
   },
 
   onLoad(){
-    this.setType('国内')
+    this.setType('gn')
+  },
+
+  onTapCategory(e) {
+    const { cat } = e.currentTarget.dataset;
+    this.setData({
+      topTitle: cat
+    })
+    this.setType(cat);
   },
 
   setType(topTitle){
-      let type = topTitleMap[topTitle];
+      //let type = topTitleMap[topTitle];
       wx.request({
         url: 'https://test-miniprogram.com/api/news/list',
         data:{
-          type: type
+          type: topTitle
         },
         success: res=>{
           let result = res.data.result

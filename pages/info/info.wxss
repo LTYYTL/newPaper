@@ -1,0 +1,62 @@
+.all{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+}
+
+.title{
+  margin-bottom: 20rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: 500
+}
+
+.info{
+  display: flex;
+  margin-bottom: 40rpx
+}
+.source{
+ font-size: 25rpx;
+ line-height: 35rpx;
+ opacity: 0.65;
+}
+
+.date{
+ margin-left: 20rpx;
+ font-size: 25rpx;
+ line-height: 35rpx;
+ opacity: 0.65;
+}
+
+.readCount{
+ position: absolute;
+ right: 20rpx;
+ font-size: 25rpx;
+ line-height: 35rpx;
+ opacity: 0.65;
+}
+
+.text-list{
+  margin-top: 20rpx;
+}
+
+.textP{
+  font-size: 25rpx;
+  line-height: 35rpx;
+  margin-bottom: 20rpx;
+  word-break:break-all
+}
+
+.textImage{
+  width: 710rpx;
+  height: 400rpx;
+  background-color: red;
+  margin-bottom: 20rpx;
+}
+
+.textStrong{
+  font-weight: 500;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  word-break:break-all
+}

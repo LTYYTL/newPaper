@@ -127,12 +127,16 @@
 .bottomSource{
  /* margin-left: 20rpx; */
  font-size: 25rpx;
+ line-height: 35rpx;
  opacity: 0.65;
 }
 
 .bottomTime{
  margin-left: 20rpx;
  font-size: 25rpx;
+ line-height: 35rpx;
  opacity: 0.65;
 }
+
+
 

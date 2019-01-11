@@ -9,11 +9,22 @@ const topTitleMap = {
   'other': "其他"
 }
 
+const topStateMap = {
+  'gn': 0,
+  'gj': 1,
+  'cj': 2,
+  'yl': 3,
+  'js': 4,
+  'ty': 5,
+  'other': 6
+}
+
 
 Page({
   data: {
     topTitleList: ["gn", "gj", "cj", "yl", "js", "ty", "other"],
     topTitleMap,
+    topStateMap,
     topTitle:'',
     bottomList: [],
     firstId : '' ,
@@ -21,16 +32,22 @@ Page({
     firstDate: '',
     firstImage:'',
     firstSource: '',
+    state:0,
   },
 
   onLoad(){
     this.setType('gn')
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#0099FF',
+    })
   },
   //获取标题
   onTapCategory(e) {
     const { cat } = e.currentTarget.dataset;
     this.setData({
-      topTitle: cat
+      topTitle: cat,
+      state: topStateMap[cat]
     })
     this.setType(cat);
   },

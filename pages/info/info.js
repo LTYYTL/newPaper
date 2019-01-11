@@ -61,7 +61,7 @@ Page({
         })
       }
     }
-
+    console.log(textList)
     this.setData({
       textList: textList
     })

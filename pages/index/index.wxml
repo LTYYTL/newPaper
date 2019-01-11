@@ -4,7 +4,7 @@
   <view class="top-list">
     <view class="topTitle-fast {{type === item ? 'current-cat-item' : ''}}" wx:for="{{topTitleList}}" wx:key="{{item}}" bindtap="onTapCategory" data-cat="{{item}}">
       <view class="topTitle">{{topTitleMap[item]}}</view>
-      <view class="topTitleLine"></view>
+      <view wx:if='{{state===topStateMap[item]}}' class="topTitleLine"></view>
     </view>
   </view>
   <!-- 中间模块 -->

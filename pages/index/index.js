@@ -91,13 +91,24 @@ Page({
         bottomList: bottomList
       })
   },
+  //中间部分跳转
+  onSelectFirst() {
+    let id = 0
+    id = this.data.firstId
+    console.log(id)
+    wx.navigateTo({
+      url: '/pages/info/info?id=' + id,
+    })
+  },
 
   //跳转第二页面
   onSelect(e) {
+    let id = 0
     const { cat } = e.currentTarget.dataset;
-    console.log(cat['id'])
+    id = cat['id']
+    console.log(id)
     wx.navigateTo({
-      url: '/pages/info/info?id='+cat['id'],
+      url: '/pages/info/info?id='+id,
     })
   },
 

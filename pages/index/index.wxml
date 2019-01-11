@@ -8,7 +8,7 @@
     </view>
   </view>
   <!-- 中间模块 -->
-  <view class='newCenter'>
+  <view class='newCenter' bindtap="onSelectFirst">
     <view class='centerId'>{{firstId}}</view>
     <view class="centerTitle">{{firstTitle}}</view>
     <view class="centerInfo">

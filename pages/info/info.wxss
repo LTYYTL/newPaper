@@ -41,8 +41,8 @@
 }
 
 .textP{
-  font-size: 25rpx;
-  line-height: 35rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
   margin-bottom: 20rpx;
   word-break:break-all
 }
@@ -50,13 +50,12 @@
 .textImage{
   width: 710rpx;
   height: 400rpx;
-  background-color: red;
   margin-bottom: 20rpx;
 }
 
 .textStrong{
   font-weight: 500;
-  font-size: 25rpx;
-  line-height: 35rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
   word-break:break-all
 }

@@ -1,14 +1,14 @@
 <!--pages/info/info.wxml-->
 <view class='all'>
-  <view class='title'>标题</view>
+  <view class='title'>{{title}}</view>
   <view class='info'>
-    <view class='source'>来源</view>
-    <view class='date'>时间</view>
-    <view class='readCount'>阅读量1111</view>
+    <view class='source'>{{source}}</view>
+    <view class='date'>{{date}}</view>
+    <view class='readCount'>阅读{{readCount}}</view>
   </view>
   <view class='text-list' wx:for='{{textList}}'>
-    <view class='textP'>普通文</view>
-    <view class='textImage'>图片文</view>
-    <view class='textStrong'>粗字体</view>
+    <view wx:if="{{item.type==='p'}}" class='textP'>{{item.text}}</view>
+    <image wx:if="{{item.type==='image'}}" class='textImage' src='{{item.src}}'></image>
+    <view wx:if="{{item.type==='strong'}}" class='textStrong'>{{item.text}}</view>
   </view>
 </view>

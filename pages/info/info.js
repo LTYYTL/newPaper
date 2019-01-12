@@ -10,6 +10,7 @@ Page({
     readCount: '',
     title: '',
     source:'' ,
+    firstImage:'',
   },
 
   onLoad(options){
@@ -30,7 +31,9 @@ Page({
         let date = util.formatTime(new Date(result.date))
         let readCount = result.readCount;
         let title = result.title;
-        let source = result.source
+        let source = result.source;
+        let firstImage = result.firstImage
+        console.log("ddddddddd"+firstImage)
         if (source === '') {
           source = '未知网络'
         }
@@ -39,6 +42,7 @@ Page({
           readCount:readCount,
           title:title,
           source:source,
+          firstImage: firstImage,
         })
         this.getContent(result.content)
       }
@@ -50,9 +54,15 @@ Page({
     let textList = []
     for(let i=0;i<content.length;i++){
       if('image'===content[i].type){
+        let image = content[i].src
+        if (content[i].src===''){
+          image = this.data.firstImage
+          console.log("s"+image)
+        }
+        console.log("h" + image)
         textList.push({
           type: content[i].type,
-          src: content[i].src,
+          src: image,
         })
       }else{
         textList.push({

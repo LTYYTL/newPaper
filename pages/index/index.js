@@ -18,14 +18,14 @@ const topStateMap = {
   'ty': 5,
   'other': 6
 }
-
+const util = require('../../utils/util.js')
 
 Page({
   data: {
     topTitleList: ["gn", "gj", "cj", "yl", "js", "ty", "other"],
     topTitleMap,
     topStateMap,
-    topTitle:'',
+    topTitle:'gn',
     bottomList: [],
     firstId : '' ,
     firstTitle:'' ,
@@ -33,6 +33,12 @@ Page({
     firstImage:'',
     firstSource: '',
     state:0,
+  },
+
+  onPullDownRefresh() {//下拉刷新
+    this.setType(this.data.topTitle,() => {
+      wx.stopPullDownRefresh()
+    })
   },
 
   onLoad(){
@@ -52,7 +58,7 @@ Page({
     this.setType(cat);
   },
   //根据标题获取内容
-  setType(topTitle){
+  setType(topTitle,callback){
       //let type = topTitleMap[topTitle];
       wx.request({
         url: 'https://test-miniprogram.com/api/news/list',
@@ -63,13 +69,16 @@ Page({
           let result = res.data.result
           this.getFirstNew(result)
           this.getNewList(result)
+        },
+        complete: () => {//有回调就回调
+          callback && callback()
         }
       })
   },
 
   //获取中间部分新闻
   getFirstNew(result){
-      var util = require('../../utils/util.js')
+     
       let firstNew = result[0]
       let firstId = firstNew.id;
       let firstTitle = firstNew.title;
@@ -89,7 +98,7 @@ Page({
   },
   //获取新闻列表
   getNewList(result){
-      var util = require('../../utils/util.js')
+      // var util = require('../../utils/util.js')
       let bottomList = []
       for(let i = 1;i<result.length;i++){
         let source = result[i].source;

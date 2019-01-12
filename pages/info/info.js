@@ -57,9 +57,7 @@ Page({
         let image = content[i].src
         if (content[i].src===''){
           image = this.data.firstImage
-          console.log("s"+image)
         }
-        console.log("h" + image)
         textList.push({
           type: content[i].type,
           src: image,

@@ -8,7 +8,6 @@ const topTitleMap = {
   'ty': "体育",
   'other': "其他"
 }
-
 const topStateMap = {
   'gn': 0,
   'gj': 1,
@@ -22,6 +21,7 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
+    //noFound = '/image/noFound.jpg',
     topTitleList: ["gn", "gj", "cj", "yl", "js", "ty", "other"],
     topTitleMap,
     topStateMap,
@@ -84,6 +84,9 @@ Page({
       let firstTitle = firstNew.title;
       let firstDate = firstNew.date;
       let firstImage = firstNew.firstImage;
+      if(firstImage===''){
+        firstImage = '/image/noFound.jpg'
+      }
       let firstSource = firstNew.source;
       if(firstSource ===''){
         firstSource = '未知网络'
@@ -98,18 +101,21 @@ Page({
   },
   //获取新闻列表
   getNewList(result){
-      // var util = require('../../utils/util.js')
       let bottomList = []
       for(let i = 1;i<result.length;i++){
         let source = result[i].source;
         if (source === '') {
           source = '未知网络'
         }
+        let image = result[i].firstImage
+        if (image === '') {
+          image = '/image/noFound.jpg'
+        }
         bottomList.push({
           id : result[i].id,
           title: result[i].title,
           date: util.formatTime(new Date(result[i].date)),
-          image: result[i].firstImage,
+          image: image,
           source: source,
         })
       }
@@ -121,7 +127,6 @@ Page({
   onSelectFirst() {
     let id = 0
     id = this.data.firstId
-    console.log(id)
     wx.navigateTo({
       url: '/pages/info/info?id=' + id,
     })
@@ -132,7 +137,6 @@ Page({
     let id = 0
     const { cat } = e.currentTarget.dataset;
     id = cat['id']
-    console.log(id)
     wx.navigateTo({
       url: '/pages/info/info?id='+id,
     })

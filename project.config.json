@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
-	"appid": "wxc355aee7f37396be",
+	"appid": "appid",
 	"projectname": "newPaper",
 	"debugOptions": {
 		"hidedInDevtools": []
